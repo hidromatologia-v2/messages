@@ -15,13 +15,13 @@ jobs:
         with:
           go-version: "1.20"
 
-      - name: Set up docker environment
-        run: docker compose up -d
-
       - name: Prepare vendor directory
         run: go mod vendor
         env:
           GOPRIVATE: github.com/hidromatologia-v2
+      
+      - name: Set up docker environment
+        run: docker compose up -d
 
       - name: Build
         run: go build -v ./...

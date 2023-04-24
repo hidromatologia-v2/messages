@@ -20,6 +20,11 @@ jobs:
         with:
           go-version: "1.20"
       
+      - name: Prepare vendor directory
+        run: go mod vendor
+        env:
+          GOPRIVATE: github.com/hidromatologia-v2
+
       - name: Set up docker environment
         run: docker compose up -d
 
@@ -34,3 +39,6 @@ jobs:
 
       - name: Clean docker environment
         run: docker compose down --rmi all -v --remove-orphans
+      
+      - name: Clean vendor directory
+        run: rm -r vendor
