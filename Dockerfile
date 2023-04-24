@@ -1,5 +1,6 @@
 FROM golang:1.19-alpine AS build-stage
 
+RUN apk add upx
 WORKDIR /messages-src
 COPY . .
 RUN go build -mod vendor -o /messages .
