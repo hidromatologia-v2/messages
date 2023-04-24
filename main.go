@@ -24,8 +24,6 @@ type Messages struct {
 	PostgresDsn            string  `env:"POSTGRES_DSN,required"`     // POSTGRESQL
 	RedisAddr              string  `env:"REDIS_ADDR,required"`       // REDIS
 	RedisDB                int     `env:"REDIS_DB,required"`         //
-	VonageSecret           string  `env:"VONAGE_SECRET,required"`    // VONAGE
-	VonageAPIKey           string  `env:"VONAGE_APIKEY,required"`    //
 	SMTPFrom               string  `env:"SMTP_FROM,required"`        // SMTP
 	SMTPHost               string  `env:"SMTP_HOST,required"`        //
 	SMTPPort               int     `env:"SMTP_PORT,required"`        //
