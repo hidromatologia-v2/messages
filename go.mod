@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/hidromatologia-v2/models v0.0.6
 	github.com/memphisdev/memphis.go v1.0.1
+	github.com/redis/go-redis/v9 v9.0.3
 	github.com/satori/go.uuid v1.2.0
 	github.com/stretchr/testify v1.8.2
 	github.com/wneessen/go-mail v0.3.9
@@ -50,9 +51,9 @@ require (
 	github.com/prometheus/client_model v0.3.0 // indirect
 	github.com/prometheus/common v0.42.0 // indirect
 	github.com/prometheus/procfs v0.9.0 // indirect
-	github.com/redis/go-redis/v9 v9.0.3 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/santhosh-tekuri/jsonschema/v5 v5.1.0 // indirect
+	github.com/sethvargo/go-envconfig v0.9.0 // indirect
 	github.com/vonage/vonage-go-sdk v0.14.0 // indirect
 	golang.org/x/crypto v0.8.0 // indirect
 	golang.org/x/exp v0.0.0-20230420155640-133eef4313cb // indirect

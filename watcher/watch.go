@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/hidromatologia-v2/models"
 	"github.com/hidromatologia-v2/models/tables"
@@ -39,7 +40,7 @@ func (w *Watcher) Run() error {
 	}
 	return w.consumer.Consume(
 		func(messages []*memphis.Msg, err error, ctx context.Context) {
-			if err != nil {
+			if err != nil && !strings.Contains(err.Error(), "timeout") {
 				log.Println("consumer err:", err)
 				return
 			}
