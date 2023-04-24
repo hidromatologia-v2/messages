@@ -14,6 +14,7 @@ services:
   messages:
     networks:
       - server
+      - memphis
     container_name: server-messages
     restart: unless-stopped
     build:
