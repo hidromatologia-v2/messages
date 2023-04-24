@@ -51,11 +51,6 @@ func main() {
 				Usage: "Memphis producer name",
 			},
 			&cli.StringFlag{
-				Name:  "message",
-				Value: tables.Email,
-				Usage: "Message type to send",
-			},
-			&cli.StringFlag{
 				Name:  "recipient",
 				Value: "",
 				Usage: "Message recipient",
@@ -93,10 +88,10 @@ func main() {
 				log.Fatal(pErr)
 			}
 			defer prod.Destroy()
-			message := tables.RandomMessage(ctx.String("message"))
+			message := tables.RandomMessage(tables.Email)
 			message.Recipient = ctx.String("recipient")
 			message.Subject = ctx.String("subject")
-			message.Message = ctx.String("body")
+			message.Body = ctx.String("body")
 			msgBytes, mErr := json.Marshal(message)
 			if mErr != nil {
 				log.Fatal(mErr)

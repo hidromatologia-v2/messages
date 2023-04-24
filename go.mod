@@ -3,7 +3,7 @@ module github.com/hidromatologia-v2/messages
 go 1.20
 
 require (
-	github.com/hidromatologia-v2/models v0.0.6
+	github.com/hidromatologia-v2/models v0.0.7
 	github.com/memphisdev/memphis.go v1.0.1
 	github.com/redis/go-redis/v9 v9.0.3
 	github.com/satori/go.uuid v1.2.0
@@ -15,7 +15,6 @@ require (
 
 require (
 	github.com/allegro/bigcache/v3 v3.1.0 // indirect
-	github.com/antihax/optional v1.0.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/biter777/countries v1.6.4 // indirect
 	github.com/brianvoe/gofakeit/v6 v6.21.0 // indirect
@@ -30,7 +29,6 @@ require (
 	github.com/glebarez/go-sqlite v1.21.1 // indirect
 	github.com/glebarez/sqlite v1.8.0 // indirect
 	github.com/gofrs/uuid v4.4.0+incompatible // indirect
-	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang-jwt/jwt/v5 v5.0.0 // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
@@ -57,20 +55,17 @@ require (
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/santhosh-tekuri/jsonschema/v5 v5.1.0 // indirect
-	github.com/vonage/vonage-go-sdk v0.14.0 // indirect
 	github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673 // indirect
 	golang.org/x/crypto v0.8.0 // indirect
-	golang.org/x/exp v0.0.0-20230420155640-133eef4313cb // indirect
-	golang.org/x/net v0.9.0 // indirect
-	golang.org/x/oauth2 v0.7.0 // indirect
+	golang.org/x/exp v0.0.0-20230424174712-0ee363d48fb1 // indirect
 	golang.org/x/sys v0.7.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
-	google.golang.org/appengine v1.6.7 // indirect
+	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/postgres v1.5.0 // indirect
 	gorm.io/gorm v1.25.0 // indirect
-	modernc.org/libc v1.22.4 // indirect
+	modernc.org/libc v1.22.5 // indirect
 	modernc.org/mathutil v1.5.0 // indirect
 	modernc.org/memory v1.5.0 // indirect
 	modernc.org/sqlite v1.22.0 // indirect

@@ -40,7 +40,7 @@ func testWatcher(t *testing.T, w *Watcher) {
 			if w.Controller.DB.
 				Where("recipient = ?", m.Recipient).
 				Where("subject = ?", m.Subject).
-				Where("message = ?", m.Message).
+				Where("body = ?", m.Body).
 				First(&message).Error == nil {
 				break
 			}

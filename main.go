@@ -57,10 +57,6 @@ func main() {
 			Addr: config.RedisAddr,
 			DB:   config.RedisDB,
 		}),
-		Vonage: &models.VonageOptions{
-			Secret: config.VonageSecret,
-			APIKey: config.VonageAPIKey,
-		},
 		Mail: &models.MailOptions{
 			From:    config.SMTPFrom,
 			Host:    config.SMTPHost,
