@@ -23,7 +23,8 @@ jobs:
       - name: Prepare vendor directory
         run: go mod vendor
         env:
-          GOPRIVATE: github.com/hidromatologia-v2
+          GOPRIVATE: github.com/hidromatologia-v2/models
+          GH_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up docker environment
         run: docker compose up -d
