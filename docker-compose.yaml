@@ -11,6 +11,16 @@ networks:
       driver: default
 
 services:
+  messages:
+    networks:
+      - server
+    container_name: server-messages
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
   postgres:
     networks:
       - server
