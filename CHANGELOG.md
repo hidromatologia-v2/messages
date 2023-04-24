@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/hidromatologia-v2/messages/compare/v0.0.1...v0.0.2) (2023-04-24)
+
+
+### Features
+
+* added default worker to the docker compose ([3dc6cd0](https://github.com/hidromatologia-v2/messages/commit/3dc6cd0228c13e903348b58d0a426611e000748e))
+
+
+### Bug Fixes
+
+* fixed dockerfile and docker-compose ([3877262](https://github.com/hidromatologia-v2/messages/commit/38772621f64ddbdce63edf7fb31bc36c3595e606))
+
 ### 0.0.1 (2023-04-24)
 
 
