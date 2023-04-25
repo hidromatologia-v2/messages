@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.6 (2023-04-25)
+
+
+### Bug Fixes
+
+* added read permissions to contents in docker step ([c10e99a](https://github.com/hidromatologia-v2/messages/commit/c10e99af34d8825b2597799ebc8e835d4ae4f13f))
+
 ### 0.0.5 (2023-04-25)
 
 
