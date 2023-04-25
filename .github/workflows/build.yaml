@@ -94,6 +94,8 @@ jobs:
           tag_name: v${{needs.versioning.outputs.version}}
 
   release-docker:
+    permissions:
+      packages: write
     needs:
       - versioning
     runs-on: ubuntu-latest
