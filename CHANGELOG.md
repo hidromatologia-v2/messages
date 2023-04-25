@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/hidromatologia-v2/messages/compare/v0.0.2...v0.0.3) (2023-04-25)
+
+
+### Features
+
+* coverage.txt ignore ([95d47b6](https://github.com/hidromatologia-v2/messages/commit/95d47b6de153f111fee7a74bde85712eccb7f576))
+
+
+### Bug Fixes
+
+* added Actor to github url ([66b2810](https://github.com/hidromatologia-v2/messages/commit/66b281033d24cb8abb90a209d0c8d392113714f5))
+* added github token ([3a883a0](https://github.com/hidromatologia-v2/messages/commit/3a883a02ddfc3b4ff6f1143f20ea1abb2e78cedc))
+* added missing go mod vendor commands ([f3cedf2](https://github.com/hidromatologia-v2/messages/commit/f3cedf20813c32ac402f6a23f934502431213662))
+* added support for go mod vendor in before docker compose up ([724a383](https://github.com/hidromatologia-v2/messages/commit/724a3839c3e6d20f691fbc316481fba525a8c142))
+* added URL replace to the git command ([27a01d4](https://github.com/hidromatologia-v2/messages/commit/27a01d4fa30b371cc52fe29e919717176274514f))
+* github repository and added secret ([e88a707](https://github.com/hidromatologia-v2/messages/commit/e88a7079b4b40b73a1989806072075b3118901c2))
+* netrc try ([8abbb2d](https://github.com/hidromatologia-v2/messages/commit/8abbb2dc9aa6f6abc41e6f8effaa069ba2898652))
+* removed unused .env file in docker-compose ([096cc4b](https://github.com/hidromatologia-v2/messages/commit/096cc4b411fa866936c6c7a496410cbe03ab8ccb))
+* removed vendoring ([a6a8b80](https://github.com/hidromatologia-v2/messages/commit/a6a8b80e2f053f0b234599c30f2d3fda8d47b136))
+* rollback removed unused steps that didn't work ([55d1ff1](https://github.com/hidromatologia-v2/messages/commit/55d1ff15d16d2bc699289b2801537ffa9e38ed7a))
+* setup goprivate in root of pipelines ([0d4551c](https://github.com/hidromatologia-v2/messages/commit/0d4551c46e3c4210893cdb31e5d4164b6c68dd3e))
+
 ### [0.0.2](https://github.com/hidromatologia-v2/messages/compare/v0.0.1...v0.0.2) (2023-04-24)
 
 
