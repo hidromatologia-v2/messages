@@ -3,7 +3,7 @@ FROM golang:1.19-alpine AS build-stage
 RUN apk add upx
 WORKDIR /messages-src
 COPY . .
-RUN go build -mod vendor -o /messages .
+RUN go build -o /messages .
 RUN upx /messages
 
 FROM alpine:latest AS release-stage
