@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.10 (2023-04-26)
+
+
+### Bug Fixes
+
+* removed unused test ([429e210](https://github.com/hidromatologia-v2/messages/commit/429e210ad13659dc7e76c46bc4fdeb0da8d45d39))
+
 ### 0.0.9 (2023-04-26)
 
 
