@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.9 (2023-04-26)
+
+
+### Features
+
+* improved coverage by separating common components ([8dc770c](https://github.com/hidromatologia-v2/messages/commit/8dc770cde2b3959cde04e8e638b854171e3b48aa))
+
 ### 0.0.8 (2023-04-26)
 
 
