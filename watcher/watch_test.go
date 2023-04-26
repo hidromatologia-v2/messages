@@ -3,16 +3,21 @@ package watcher
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"testing"
 	"time"
 
-	"github.com/hidromatologia-v2/messages/common/connection"
+	"github.com/hidromatologia-v2/models/common/connection"
 	"github.com/hidromatologia-v2/models/tables"
 	"github.com/memphisdev/memphis.go"
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/assert"
 )
+
+func testHandleMessage(t *testing.T, w *Watcher) {
+	t.Run("Valid", func(tt *testing.T) {
+
+	})
+}
 
 func testWatcher(t *testing.T, w *Watcher) {
 	t.Run("Valid", func(tt *testing.T) {
@@ -41,15 +46,6 @@ func testWatcher(t *testing.T, w *Watcher) {
 	})
 }
 
-func TestLogOnError(t *testing.T) {
-	t.Run("Nil", func(tt *testing.T) {
-		LogOnError(nil)
-	})
-	t.Run("Error", func(tt *testing.T) {
-		LogOnError(fmt.Errorf("an error"))
-	})
-}
-
 func TestWatcher(t *testing.T) {
 	w := &Watcher{
 		Controller:      connection.PostgresController(),
@@ -58,4 +54,14 @@ func TestWatcher(t *testing.T) {
 	go w.Run()
 	defer w.Close()
 	testWatcher(t, w)
+}
+
+func TestHandleMessage(t *testing.T) {
+	w := &Watcher{
+		Controller:      connection.PostgresController(),
+		MessageConsumer: connection.DefaultConsumer(t),
+	}
+	go w.Run()
+	defer w.Close()
+	testHandleMessage(t, w)
 }

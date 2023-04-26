@@ -59,8 +59,8 @@ func main() {
 		log.Fatal(err)
 	}
 	consumer, cErr := conn.CreateConsumer(
-		config.Consumer.StationName,
-		config.Consumer.ConsumerName,
+		config.Consumer.Station,
+		config.Consumer.Consumer,
 	)
 	if cErr != nil {
 		log.Fatal(cErr)
