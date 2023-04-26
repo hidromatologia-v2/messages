@@ -11,6 +11,15 @@ networks:
       driver: default
 
 services:
+  messages:
+    networks:
+      - server
+      - memphis
+    container_name: server-messages
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
   postgres:
     networks:
       - server
