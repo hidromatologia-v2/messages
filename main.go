@@ -14,73 +14,60 @@ import (
 	"github.com/wneessen/go-mail"
 )
 
-type Messages struct {
-	MemphisStationName     string  `env:"MEMPHIS_STATION,required"`  // MEMPHIS
-	MemphisConsumerName    string  `env:"MEMPHIS_CONSUMER,required"` //
-	MemphisHost            string  `env:"MEMPHIS_HOST,required"`     //
-	MemphisUsername        string  `env:"MEMPHIS_USERNAME,required"` //
-	MemphisPassword        *string `env:"MEMPHIS_PASSWORD,noinit"`   //
-	MemphisConnectionToken *string `env:"MEMPHIS_CONN_TOKEN,noinit"` //
-	PostgresDsn            string  `env:"POSTGRES_DSN,required"`     // POSTGRESQL
-	RedisAddr              string  `env:"REDIS_ADDR,required"`       // REDIS
-	RedisDB                int     `env:"REDIS_DB,required"`         //
-	SMTPFrom               string  `env:"SMTP_FROM,required"`        // SMTP
-	SMTPHost               string  `env:"SMTP_HOST,required"`        //
-	SMTPPort               int     `env:"SMTP_PORT,required"`        //
-	SMTPUsername           *string `env:"SMTP_USERNAME,noinit"`      //
-	SMTPPassword           *string `env:"SMTP_PASSWORD,noinit"`      //
-	SMTPNoTLS              *bool   `env:"SMTP_NO_TLS,noinit"`        //
-}
-
 func main() {
-	var config Messages
+	var config Config
 	eErr := envconfig.Process(context.Background(), &config)
 	if eErr != nil {
 		log.Fatal(eErr)
 	}
 	mailOpts := []mail.Option{
-		mail.WithPort(config.SMTPPort),
+		mail.WithPort(config.SMTP.Port),
 	}
-	if config.SMTPUsername != nil && config.SMTPPassword != nil {
+	if config.SMTP.Username != nil && config.SMTP.Password != nil {
 		mailOpts = append(mailOpts, mail.WithSMTPAuth(mail.SMTPAuthPlain))
-		mailOpts = append(mailOpts, mail.WithUsername(*config.SMTPUsername))
-		mailOpts = append(mailOpts, mail.WithUsername(*config.SMTPPassword))
+		mailOpts = append(mailOpts, mail.WithUsername(*config.SMTP.Username))
+		mailOpts = append(mailOpts, mail.WithUsername(*config.SMTP.Password))
 	}
-	if config.SMTPNoTLS != nil {
+	if config.SMTP.NoTLS != nil {
 		mailOpts = append(mailOpts, mail.WithTLSPolicy(mail.NoTLS))
 	}
 	controllerOpts := models.Options{
-		Database: postgres.New(config.PostgresDsn),
+		Database: postgres.New(config.Postgres.DSN),
 		Cache: cache.Redis(&redis.Options{
-			Addr: config.RedisAddr,
-			DB:   config.RedisDB,
+			Addr: config.Redis.Addr,
+			DB:   config.Redis.DB,
 		}),
 		Mail: &models.MailOptions{
-			From:    config.SMTPFrom,
-			Host:    config.SMTPHost,
+			From:    config.SMTP.From,
+			Host:    config.SMTP.Host,
 			Options: mailOpts,
 		},
 	}
 	var connOpts []memphis.Option
-	if config.MemphisPassword != nil {
-		connOpts = append(connOpts, memphis.Password(*config.MemphisPassword))
+	if config.Consumer.Password != nil {
+		connOpts = append(connOpts, memphis.Password(*config.Consumer.Password))
 	}
-	if config.MemphisConnectionToken != nil {
-		connOpts = append(connOpts, memphis.ConnectionToken(*config.MemphisConnectionToken))
+	if config.Consumer.ConnectionToken != nil {
+		connOpts = append(connOpts, memphis.ConnectionToken(*config.Consumer.ConnectionToken))
 	}
 	conn, err := memphis.Connect(
-		config.MemphisHost,
-		config.MemphisUsername,
+		config.Consumer.Host,
+		config.Consumer.Username,
 		connOpts...,
 	)
 	if err != nil {
 		log.Fatal(err)
 	}
+	consumer, cErr := conn.CreateConsumer(
+		config.Consumer.StationName,
+		config.Consumer.ConsumerName,
+	)
+	if cErr != nil {
+		log.Fatal(cErr)
+	}
 	w := &watcher.Watcher{
-		Controller:   models.NewController(&controllerOpts),
-		StationName:  config.MemphisStationName,
-		ConsumerName: config.MemphisConsumerName,
-		Conn:         conn,
+		Controller:      models.NewController(&controllerOpts),
+		MessageConsumer: consumer,
 	}
 	rErr := w.Run()
 	if rErr != nil {
