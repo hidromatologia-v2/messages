@@ -28,6 +28,23 @@ func (w *Watcher) Close() error {
 	return w.Controller.Close()
 }
 
+func (w *Watcher) handleMessage(message *memphis.Msg) error {
+	var m tables.Message
+	dErr := json.NewDecoder(bytes.NewReader(message.Data())).Decode(&m)
+	if dErr != nil {
+		return fmt.Errorf("error while decoding the message: %w", dErr)
+	}
+	sendErr := w.Controller.SendMessage(&m)
+	if sendErr != nil {
+		return fmt.Errorf("error while sending the message: %w", sendErr)
+	}
+	ackErr := message.Ack()
+	if ackErr != nil {
+		return fmt.Errorf("error while ack the message: %w", ackErr)
+	}
+	return nil
+}
+
 func (w *Watcher) Run() error {
 	var cErr error
 	w.consumer, cErr = w.Conn.CreateConsumer(
@@ -45,20 +62,9 @@ func (w *Watcher) Run() error {
 				return
 			}
 			for _, message := range messages {
-				var m tables.Message
-				dErr := json.NewDecoder(bytes.NewReader(message.Data())).Decode(&m)
-				if dErr != nil {
-					log.Println("error while decoding the message:", dErr)
-					continue
-				}
-				sendErr := w.Controller.SendMessage(&m)
-				if sendErr != nil {
-					log.Println("error while sending the message:", sendErr)
-					continue
-				}
-				ackErr := message.Ack()
-				if ackErr != nil {
-					log.Println("error while ack the message:", ackErr)
+				hErr := w.handleMessage(message)
+				if hErr != nil {
+					log.Print(hErr)
 				}
 			}
 		},
