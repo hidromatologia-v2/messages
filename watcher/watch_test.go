@@ -13,12 +13,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func testHandleMessage(t *testing.T, w *Watcher) {
-	t.Run("Valid", func(tt *testing.T) {
-
-	})
-}
-
 func testWatcher(t *testing.T, w *Watcher) {
 	t.Run("Valid", func(tt *testing.T) {
 		prod := connection.DefaultProducer(tt)
@@ -54,14 +48,4 @@ func TestWatcher(t *testing.T) {
 	go w.Run()
 	defer w.Close()
 	testWatcher(t, w)
-}
-
-func TestHandleMessage(t *testing.T) {
-	w := &Watcher{
-		Controller:      connection.PostgresController(),
-		MessageConsumer: connection.DefaultConsumer(t),
-	}
-	go w.Run()
-	defer w.Close()
-	testHandleMessage(t, w)
 }
