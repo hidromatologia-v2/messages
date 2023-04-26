@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.11 (2023-04-26)
+
+
+### Bug Fixes
+
+* removed build container from default docker-compose ([4bb3084](https://github.com/hidromatologia-v2/messages/commit/4bb30841912ad6e7a6915d1ee0ef5cb1b3aa6db2))
+
 ### 0.0.10 (2023-04-26)
 
 
