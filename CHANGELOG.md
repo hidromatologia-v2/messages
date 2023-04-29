@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.12 (2023-04-29)
+
+
+### Bug Fixes
+
+* updated name of struct field ([4df814a](https://github.com/hidromatologia-v2/messages/commit/4df814a4ebd74e63296b41f5e9ca8b3535072d5f))
+
 ### 0.0.11 (2023-04-26)
 
 
