@@ -56,6 +56,8 @@ github.com/hidromatologia-v2/models v0.0.10 h1:5V1xuFNy9lYTqAgXb4S1zEWSkdUgMjRpl
 github.com/hidromatologia-v2/models v0.0.10/go.mod h1:Iveexuc0lOpME5/fA/3WX6j90hKCfJ1PxXYyOxYxlWg=
 github.com/hidromatologia-v2/models v0.0.12 h1:ZWlaq+g5vRl76JRJajzMFufKw6dsNJ8m4JrQui2ane4=
 github.com/hidromatologia-v2/models v0.0.12/go.mod h1:Iveexuc0lOpME5/fA/3WX6j90hKCfJ1PxXYyOxYxlWg=
+github.com/hidromatologia-v2/models v0.0.14 h1:7vlCUqTUQH2DFc+6C/7rs6yywe5HKJXwctvhlnpdGMs=
+github.com/hidromatologia-v2/models v0.0.14/go.mod h1:Iveexuc0lOpME5/fA/3WX6j90hKCfJ1PxXYyOxYxlWg=
 github.com/jackc/pgpassfile v1.0.0 h1:/6Hmqy13Ss2zCq62VdNG8tM1wchn8zjSGOBJ6icpsIM=
 github.com/jackc/pgpassfile v1.0.0/go.mod h1:CEx0iS5ambNFdcRtxPj5JhEz+xB6uRky5eyVu/W2HEg=
 github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a h1:bbPeKD0xmW/Y25WS6cokEszi5g+S0QxI/d45PkRi7Nk=
@@ -114,6 +116,8 @@ github.com/russross/blackfriday/v2 v2.1.0 h1:JIOH55/0cWyOuilr9/qlrm0BSXldqnqwMsf
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
 github.com/santhosh-tekuri/jsonschema/v5 v5.1.0 h1:wSUNu/w/7OQ0Y3NVnfTU5uxzXY4uMpXW92VXEJKqBB0=
 github.com/santhosh-tekuri/jsonschema/v5 v5.1.0/go.mod h1:FKdcjfQW6rpZSnxxUvEA5H/cDPdvJ/SZJQLWWXWGrZ0=
+github.com/santhosh-tekuri/jsonschema/v5 v5.3.0 h1:uIkTLo0AGRc8l7h5l9r+GcYi9qfVPt6lD4/bhmzfiKo=
+github.com/santhosh-tekuri/jsonschema/v5 v5.3.0/go.mod h1:FKdcjfQW6rpZSnxxUvEA5H/cDPdvJ/SZJQLWWXWGrZ0=
 github.com/satori/go.uuid v1.2.0 h1:0uYX9dsZ2yD7q2RtLRtPSdGDWzjeM3TbMJP9utgA0ww=
 github.com/satori/go.uuid v1.2.0/go.mod h1:dA0hQrYB0VpLJoorglMZABFdXlWrHn1NEOzdhQKdks0=
 github.com/sethvargo/go-envconfig v0.9.0 h1:Q6FQ6hVEeTECULvkJZakq3dZMeBQ3JUpcKMfPQbKMDE=
@@ -214,3 +218,5 @@ modernc.org/memory v1.5.0 h1:N+/8c5rE6EqugZwHii4IFsaJ7MUhoWX07J5tC/iI5Ds=
 modernc.org/memory v1.5.0/go.mod h1:PkUhL0Mugw21sHPeskwZW4D6VscE/GQJOnIpCnW6pSU=
 modernc.org/sqlite v1.22.0 h1:Uo+wEWePCspy4SAu0w2VbzUHEftOs7yoaWX/cYjsq84=
 modernc.org/sqlite v1.22.0/go.mod h1:cxbLkB5WS32DnQqeH4h4o1B0eMr8W/y8/RGuxQ3JsC0=
+modernc.org/sqlite v1.22.1 h1:P2+Dhp5FR1RlVRkQ3dDfCiv3Ok8XPxqpe70IjYVA9oE=
+modernc.org/sqlite v1.22.1/go.mod h1:OrDj17Mggn6MhE+iPbBNf7RGKODDE9NFT0f3EwDzJqk=
