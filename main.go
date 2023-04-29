@@ -33,7 +33,7 @@ func main() {
 	}
 	controllerOpts := models.Options{
 		Database: postgres.New(config.Postgres.DSN),
-		Cache: cache.Redis(&redis.Options{
+		EmailCache: cache.Redis(&redis.Options{
 			Addr: config.Redis.Addr,
 			DB:   config.Redis.DB,
 		}),
