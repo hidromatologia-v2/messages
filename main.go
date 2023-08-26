@@ -10,6 +10,7 @@ import (
 	"github.com/hidromatologia-v2/models/common/postgres"
 	"github.com/memphisdev/memphis.go"
 	"github.com/redis/go-redis/v9"
+	uuid "github.com/satori/go.uuid"
 	"github.com/sethvargo/go-envconfig"
 	"github.com/wneessen/go-mail"
 )
@@ -60,7 +61,7 @@ func main() {
 	}
 	consumer, cErr := conn.CreateConsumer(
 		config.Consumer.Station,
-		config.Consumer.Consumer,
+		config.Consumer.Consumer+uuid.NewV4().String(),
 	)
 	if cErr != nil {
 		log.Fatal(cErr)
